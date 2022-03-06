@@ -1,0 +1,192 @@
+body, html {
+    height: 100%;
+  }
+.bg-imgpage1{
+    background-image: url(file:///C:/Binar%20FSW/assets/main-bg.jpg);
+    min-height: 680px;
+    height: 100%;
+    width: 100%;
+    background-position: 80%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-color: black;
+}
+.bottom-arrow{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+#topnav {
+  overflow: hidden;
+  background-color: #333;
+  background-color: rgba(70, 68, 68, 0.5)!important;
+  color: white!important;
+  padding: 10px 10px 10px 20px;
+}
+#topnav a{
+    color: white!important;
+}
+
+.topnav-right {
+    float: right;
+    padding: 10px 10px 10px 90px;
+  }
+#div2{
+    vertical-align: middle;
+    margin-top: 10%;
+    text-align: center;
+    color: white;   
+}
+
+.title1{
+    font-size: 65px;
+    margin-bottom: 3%;
+}
+
+.title2{
+    font-size: 20px;
+    margin-bottom: 3%;
+}
+#btn{
+    padding: 45px 40px;
+}
+
+#div3{
+    vertical-align: middle;
+    margin-top: 10%;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
+#triangle-down {
+    width: 10px;
+    height: 5px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px;
+  }
+
+ 
+
+
+
+
+
+  .bg-imgpage2{
+    background-image:url(file:///C:/Binar%20FSW/assets/the-games-bg.jpg);
+    min-height: 380px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-color: black;
+    padding-bottom: 600px;
+
+  }
+
+  #thegames{
+      color: white;
+      padding-top: 35px;
+      margin-left: 20%;
+  }
+
+
+  #imggames{
+      width: 50%;
+      height: 70%;
+      float: right;
+      margin-right: 18%;
+      
+  }
+
+  h1{
+    color: white;
+  }
+
+  .bg-imgpage3{
+    background-image:url(file:///C:/Binar%20FSW/assets/features.jpg);
+    min-height: 380px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-color: black;
+  }
+
+  #features{
+    color: goldenrod;
+  }
+  #page3{
+    float: right;
+    position:relative;
+    margin-right: 20%;
+    margin-top: 10%;
+  }
+  p{
+    color: white;
+    font-size: 10px;
+  }
+
+
+ 
+  .bg-imgpage4{
+    background-image:url(file:///C:/Binar%20FSW/assets/requirements.png);
+    min-height: 380px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-color: black;
+  }
+
+  .bg-imgpage5{
+    background-image:url(file:///C:/Binar%20FSW/assets/top-score-bg.png)!important;
+    min-height: 380px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+  }
+  .slideshow-container {
+    margin: auto;
+  }
+
+  .mySlides img{
+      width: 700px;
+      padding-top: 20px;
+  }
+
+  .next {
+    margin-left:700px!important;
+    border-radius: 3px 0 0 3px;
+  }
+
+  
+/* Next & previous buttons */
+.prev, .next {
+    position: absolute;
+    float: left;
+    z-index: 1;
+    margin-left: -50px;
+    cursor: pointer;
+    top: 40%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    text-decoration:none;
+  }
