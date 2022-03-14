@@ -8,7 +8,7 @@ h1{
 }
 
 .bg-imgpage1{
-  background-image: url(file:///C:/Binar%20FSW/MainAsset/main-bg.jpg);
+  background-image: url(./MainAsset//main-bg.jpg);
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -409,4 +409,11 @@ hr{
 }
 .hover-transform:hover{
   font-size: larger;
+}
+
+
+
+
+.pagegame{
+  background-color: darkgoldenrod;
 }

@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Binar%20FSW/index.html",
+            "url": "file:///C:/Binar%20FSW/game.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
