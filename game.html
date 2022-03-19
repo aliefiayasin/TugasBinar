@@ -12,6 +12,58 @@
     <title>challenge 3</title>
 </head>
 <body class="pagegame">
+
+    <header class="page-header d-flex p-2">
+        <div id="back">
+            <h1><a href="./index.html"><</a></h1>
+        </div>
+        <div class="d-flex" id="judul">
+            <img id="backlogo" src="./MainAsset/logo.png" alt="">
+            <h1>    ROCK PAPER SCISSORS</h1>
+        </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row gamearena text-center">
+          <div class="col-sm player ">
+          <h1 class="col-sm playername">PLAYER 1</h1>
+          <div class="col-sm gamepict">
+            <button class="user-tool your-tool dissap" id="r-user">
+              <img class="tool" src="./MainAsset/rock.png" alt="rock">
+            </button>
+            <button class="user-tool your-tool dissap" id="p-user">
+              <img class="tool" src="./MainAsset/paper.png" alt="paper">
+            </button>
+            <button class="user-tool your-tool dissap" id="s-user">
+              <img class="tool" src="./MainAsset/gunting.png" alt="schisor">
+            </button>
+          </div>
+        </div>
+        <div class="col-sm mx-auto versusreset">
+          <div class="boxR" id="box">
+            <h1 id="h1">VS</h1>
+          </div>
+          <div class="refresh">
+            <img id="refresh" src="./MainAsset/refresh.png">
+          </div>
+        </div>
+        <div class="col-sm mx-auto complayer">
+          <h1 class="com">COMPUTER</h1>
+          <div class="gamepict">
+            <button class="user-tool your-tool dissap" id="r-user">
+              <img class="tool" src="./MainAsset/rock.png" alt="rock">
+          </button>
+          <button class="user-tool your-tool dissap" id="p-user">
+            <img class="tool" src="./MainAsset/paper.png" alt="paper">
+          </button>
+          <button class="user-tool your-tool dissap" id="s-user">
+            <img class="tool" src="./MainAsset/gunting.png" alt="schisor">
+        </button>
+      </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

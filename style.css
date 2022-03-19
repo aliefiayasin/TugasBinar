@@ -4,6 +4,7 @@ body, html {
   color: white;
 }
 h1{
+  font: BEBAS NUE;
   font-size: 4rem!important;
 }
 
@@ -415,5 +416,73 @@ hr{
 
 
 .pagegame{
-  background-color: darkgoldenrod;
+  background-color: #9c835f;
+}
+
+.pagegame h1{  
+  font-size: 2rem!important;
+  display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+}
+
+#judul{
+  align-items: center;
+  margin-left: 27px;
+  margin-left: 17px;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+#backlogo{
+  vertical-align: middle;
+}
+
+
+.tool{
+  width: 100%;
+  height: auto;
+}
+.user-tool{
+  background: transparent;
+  border: none;
+  width: 30%;
+  height: 120px;
+}
+
+.versusreset{
+  display: flex;
+  flex-direction: column;
+}
+
+#box{
+  color: red;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.gamearena{
+  text-align: center;
+}
+
+#refresh{
+  width: 100px;
+  height: auto;
+}
+
+@media(min-width: 750px){
+  .gamepict{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .versusreset{
+    margin: auto 50px;
+    width: 300px!important;
+  }
 }
