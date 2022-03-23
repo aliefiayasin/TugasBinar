@@ -1,40 +1,52 @@
-class Animals {
-    constructor(name, age) {
+class Rochambeau {
+    constructor(name, option) {
         this.name = name;
-        this.age = age;
-    }
-    sing() {
-        return `${this.name} can sing`;
-    }
-    dance() {
-        return `${this.name} can dance`;
-    }    
-    walk() {
-        return `${this.name} can walk`;
-    }
-    walk() {
-        return `${this.name} can eat`;
-    }
-    walk() {
-        return `${this.name} can scream`;
-    }
-} 
-class Cats extends Animals {
-    constructor(name, age, whiskerColor) {
-        super(name, age);
-        this.whiskerColor = whiskerColor;
-    }
-    whiskers() {
-        return `I have ${this.whiskerColor} whiskers`;
+        this.option = option;
     }
 }
-class Dogs extends Animals {
-    constructor(name, age, type) {
-        super(name, age);
-        this.type = whiskerColor;
-    }
-    whiskers() {
-        return `I have ${this.type} dog`;
+
+let options = ["Rock", "Paper", "Scissor"];
+
+$("#refresh").on('click', function(event){
+    $('#h1').text("VS");
+    $('#h1').css("color", "red");
+});
+
+$(".your-tool").on('click', function(event){
+    let option = options[GetOption(event.currentTarget.id)];
+
+    let player = new Rochambeau("player", option);
+
+    let random = options[Math.floor(Math.random() * 3)];
+    let computer = new Rochambeau("computer", random);
+
+    CheckResult(player, computer);
+});
+
+function GetOption(expr){
+    switch (expr) {
+        case 'rock':
+            return 0;
+        case 'paper':
+            return 1;
+        case 'scissor':
+            return 2;
+        default:
+            return -1;
     }
 }
-let clara = new Dogs("Clara", 33, "indigo");
+
+function CheckResult(player, computer){
+    if(player.option === computer.option){
+        // change css VS => DRAW 
+        $('#h1').text("DRAW");
+        $('#h1').css("color", "yellow")
+    }else if(player.option === "Rock" && computer.option === "Paper"){
+        $('#h1').text("Lose");
+        $('#h1').css("color", "red")
+    }
+    else{
+        $('#h1').text("Win");
+        $('#h1').css("color", "green")
+    }
+}

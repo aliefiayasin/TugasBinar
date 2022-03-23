@@ -451,8 +451,8 @@ hr{
 .user-tool{
   background: transparent;
   border: none;
-  width: 30%;
-  height: 120px;
+  width: 50%;
+  height:180px;
 }
 
 .versusreset{
@@ -485,4 +485,17 @@ hr{
     margin: auto 50px;
     width: 300px!important;
   }
+  .user-tool img{
+    width: 60%;
+  }
+}
+
+.your-tool:hover{
+  transform: rotate(-20deg);
+}
+.com-tool{
+  transform: scaleX(-1);
+}
+.com-tool:hover{
+  transform: rotate(20deg) scaleX(-1);
 }
