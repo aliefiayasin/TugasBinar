@@ -8,20 +8,28 @@ class Rochambeau {
 let options = ["Rock", "Paper", "Scissor"];
 
 $("#refresh").on('click', function(event){
-    $('#h1').text("VS");
-    $('#h1').css("color", "red");
+    ResetGame();
 });
 
 $(".your-tool").on('click', function(event){
-    let option = options[GetOption(event.currentTarget.id)];
+    if(!IsReady()) return;
+
+    let targetId = event.currentTarget.id;
+    UpdatePlayerSelection(targetId);
+    let option = options[GetOption(targetId)];
 
     let player = new Rochambeau("player", option);
 
     let random = options[Math.floor(Math.random() * 3)];
     let computer = new Rochambeau("computer", random);
+    UpdateComputerSelection(random);
 
     CheckResult(player, computer);
 });
+
+function IsReady(){
+    return $('#h1').text() === "VS";
+}
 
 function GetOption(expr){
     switch (expr) {
@@ -39,14 +47,35 @@ function GetOption(expr){
 function CheckResult(player, computer){
     if(player.option === computer.option){
         // change css VS => DRAW 
-        $('#h1').text("DRAW");
-        $('#h1').css("color", "yellow")
+        $('#h1').text("Draw");
     }else if(player.option === "Rock" && computer.option === "Paper"){
         $('#h1').text("Lose");
-        $('#h1').css("color", "red")
     }
     else{
         $('#h1').text("Win");
-        $('#h1').css("color", "green")
     }
+    $('#box').addClass('result');
+}
+
+function UpdatePlayerSelection(targetId){
+    $('#'+targetId).addClass('selected');
+}
+
+function UpdateComputerSelection(value){
+    let id = '';
+    if(value === 'Rock'){
+        id = 'r-user';
+    } else if (value === 'Paper'){
+        id = 'p-user';
+    } else if (value === 'Scissor'){
+        id = 's-user';
+    }
+    UpdatePlayerSelection(id);
+}
+
+function ResetGame(){
+    $('#h1').text("VS");
+    $('#box').removeClass('result');
+    $('.your-tool').removeClass('selected');
+    $('.com-tool').removeClass('selected');
 }

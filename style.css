@@ -428,7 +428,6 @@ hr{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-
 }
 
 #judul{
@@ -498,4 +497,32 @@ hr{
 }
 .com-tool:hover{
   transform: rotate(20deg) scaleX(-1);
+}
+
+.selected{
+  border-radius: 30px;
+  background-color: lightgrey;
+  transform: rotate(20deg)!important;
+}
+
+.com-tool.selected{
+  transform: rotate(-20deg) scaleX(-1)!important;
+}
+
+#box{
+  height: 100px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  margin: 0 30px;
+}
+
+.refresh{
+  margin-top: 50px;
+}
+.result{
+  background-color: green;
+}
+.result #h1{
+  color: white;
 }
