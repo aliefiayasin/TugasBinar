@@ -417,6 +417,8 @@ hr{
 
 .pagegame{
   background-color: #9c835f;
+  height: auto;
+  padding-bottom:26px;
 }
 
 .pagegame h1{  
@@ -444,7 +446,7 @@ hr{
 
 
 .tool{
-  width: 100%;
+  /* width: 100%; */
   height: auto;
 }
 .user-tool{
@@ -462,7 +464,7 @@ hr{
 #box{
   color: red;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .gamearena{
@@ -474,12 +476,12 @@ hr{
   height: auto;
 }
 
-@media(min-width: 750px){
-  .gamepict{
-    display: flex;
-    flex-direction: column;
-  }
+.gamepick{  
+  margin: 0 auto;
+  display: block;
+}
 
+@media(min-width: 750px){
   .versusreset{
     margin: auto 50px;
     width: 300px!important;
@@ -525,4 +527,8 @@ hr{
 }
 .result #h1{
   color: white;
+}
+
+.user-tool:active{
+  border: none!important;
 }

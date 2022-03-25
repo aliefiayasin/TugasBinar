@@ -1,9 +1,28 @@
 class Rochambeau {
-    constructor(name, option) {
+    constructor(name, id, option) {
         this.name = name;
+        this.id = id;
         this.option = option;
     }
+    updateSelection(){
+        UpdatePlayerSelection(this.id);
+    }
 }
+
+class Player extends Rochambeau{
+    reset(){
+        $('.your-tool').removeClass('selected');
+    }
+}
+
+class Computer extends Rochambeau{
+    reset(){
+        $('.com-tool').removeClass('selected');
+    }
+}
+
+var player;
+var computer;
 
 let options = ["Rock", "Paper", "Scissor"];
 
@@ -18,11 +37,14 @@ $(".your-tool").on('click', function(event){
     UpdatePlayerSelection(targetId);
     let option = options[GetOption(targetId)];
 
-    let player = new Rochambeau("player", option);
+    player = new Player("player", targetId, option);
+    player.updateSelection();
 
     let random = options[Math.floor(Math.random() * 3)];
-    let computer = new Rochambeau("computer", random);
-    UpdateComputerSelection(random);
+    let computerId = GetComputerTarget(random);
+    computer = new Computer("computer", computerId, random);
+    
+    computer.updateSelection();
 
     CheckResult(player, computer);
 });
@@ -47,12 +69,12 @@ function GetOption(expr){
 function CheckResult(player, computer){
     if(player.option === computer.option){
         // change css VS => DRAW 
-        $('#h1').text("Draw");
+        $('#h1').text("DRAW");
     }else if(player.option === "Rock" && computer.option === "Paper"){
-        $('#h1').text("Lose");
+        $('#h1').text("COM WIN");
     }
     else{
-        $('#h1').text("Win");
+        $('#h1').text("PLAYER 1 WIN");
     }
     $('#box').addClass('result');
 }
@@ -61,7 +83,7 @@ function UpdatePlayerSelection(targetId){
     $('#'+targetId).addClass('selected');
 }
 
-function UpdateComputerSelection(value){
+function GetComputerTarget(value){
     let id = '';
     if(value === 'Rock'){
         id = 'r-user';
@@ -70,12 +92,12 @@ function UpdateComputerSelection(value){
     } else if (value === 'Scissor'){
         id = 's-user';
     }
-    UpdatePlayerSelection(id);
+    return id;
 }
 
 function ResetGame(){
     $('#h1').text("VS");
     $('#box').removeClass('result');
-    $('.your-tool').removeClass('selected');
-    $('.com-tool').removeClass('selected');
+    computer?.reset();
+    player?.reset();
 }
