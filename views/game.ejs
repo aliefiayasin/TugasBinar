@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>challenge 3</title>
+</head>
+<body class="pagegame">
+
+    <header class="page-header d-flex p-2">
+        <div id="back">
+            <h1><a href="index"></a></h1>
+        </div>
+        <div class="d-flex" id="judul">
+            <img id="backlogo" src="/images/logo.png" alt="">
+            <h1 id="h1judul"> ROCK PAPER SCISSORS</h1>
+        </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row gamearena text-center">
+          <div class="col-sm player ">
+          <h1 class="col-sm playername">PLAYER 1</h1>
+          <div class="col-sm gamepict">
+            <button class="user-tool your-tool" id="rock">
+              <img class="tool" src="/images/rock.png" alt="rock">
+            </button>
+            <button class="user-tool your-tool" id="paper">
+              <img class="tool" src="/images/paper.png" alt="paper">
+            </button>
+            <button class="user-tool your-tool" id="scissor">
+              <img class="tool" src="/images/scissor.png" alt="schisor">
+            </button>
+          </div>
+        </div>
+        <div class="col-sm mx-auto versusreset">
+          <div class="boxR" id="box">
+            <div id="h1">VS</div>
+          </div>
+          <div class="refresh">
+            <img id="refresh" src="/images/refresh.png">
+          </div>
+        </div>
+        <div class="col-sm mx-auto complayer">
+          <h1 class="com">COMPUTER</h1>
+          <div class="gamepict">
+            <button class="user-tool com-tool" id="r-user">
+              <img class="tool" src="/images/rock.png" alt="rock">
+          </button>
+          <button class="user-tool com-tool" id="p-user">
+            <img class="tool" src="/images/paper.png" alt="paper">
+          </button>
+          <button class="user-tool com-tool" id="s-user">
+            <img class="tool" src="/images/scissor.png" alt="schisor">
+        </button>
+      </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/javascripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
