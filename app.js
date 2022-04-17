@@ -4,13 +4,15 @@ const app = express()
 const port = 3000
 let posts = require('./db/posts.json') // import
 const users = posts
+let isLogin = false
+let user
 
 app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {isLogin, user})
 })
 
 app.get('/game', (req, res) => {
@@ -48,19 +50,29 @@ app.get('/test', (req, res) => {
 
 app.post('/login', (req, res) => {
   const {username, password} = req.body
-  let loginStatus = false
+  let fullname = ''
    for (var i = 0; i < users.length; i++){
      if (username === users[i].username && password === users[i].password){
-        loginStatus = true;
+        isLogin = true
+        user = users[i]
         break;
       }
    }
-
-   if(loginStatus){     
-    res.status(200).send(`You're successfully login, ${users[i].fullname}`)
+   
+   if(isLogin){     
+    res.redirect('/loginsuccess?name=' + encodeURIComponent(user.fullname));
    }else{     
-    res.status(200).send(`Login failed`)
+    res.redirect('/loginfailed')
    }
+})
+
+app.get('/loginsuccess', (req, res) => {
+  const name = req.query.name
+  res.render('loginsuccess', {name})
+})
+
+app.get('/loginfailed', (req, res) => {
+  res.render('loginfailed')
 })
 
 app.get('/api/v1/posts', (req,res) =>{
