@@ -8,6 +8,14 @@ h1{
   font-size: 4rem!important;
 }
 
+#back a{
+  color: white;
+}
+
+#back a:hover{
+  text-decoration: none;
+}
+
 .bg-imgpage1{
   background-image: url(/images/main-bg.jpg);
   width: 100%;
