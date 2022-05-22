@@ -1,0 +1,33 @@
+CREATE TABLE user_games (
+id SERIAL,
+"username" VARCHAR(255) NOT NULL,
+"password" VARCHAR(255) NOT NULL,
+"createdAt" date,
+"updatedAt" date,
+"isActive" boolean,
+  PRIMARY KEY ("id")
+);
+
+INSERT INTO user_games(
+"username",
+"password"
+) VALUES ('user1', 'user1');
+
+CREATE TABLE user_game_biodata (
+    user_game_id SERIAL,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    "createdAt" date,
+    "updatedAt" date
+);
+CREATE TABLE user_game_histories (
+    user_game_id SERIAL NOT NULL,
+    time date,
+    score VARCHAR(255),
+    "createdAt" date,
+    "updatedAt" date
+);
+
+sequelize model:generate --name user_game_biodata --attributes user_game_id:integer,name:string,address:string,email:string
+sequelize model:generate --name user_game_history --attributes user_game_id:integer,time:date,score:string

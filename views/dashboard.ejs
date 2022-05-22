@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section class="dashboard">
+        <div class="bg-white border rounded-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="text-center">Table user_games</div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">User name</th>
+                                    <th scope="col">Full name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% biodata.forEach(i=> { %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= i.user_game.id %>
+                                        </th>
+                                        <td>
+                                            <%= i.user_game.username %>
+                                        </td>
+                                        <td>
+                                            <%= i.name %>
+                                        </td>
+                                        <td>
+                                            <%= i.address %>
+                                        </td>
+                                        <td>
+                                            <%= i.email %>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal" data-id=<%=i.user_game.id %>
+                                                data-username=<%= i.user_game.username %>
+                                                    data-name=<%= i.name %>
+                                                        data-address=<%= i.address %>
+                                                            data-email=<%= i.email %>
+                                                                >Edit</button>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#exampleModalDelete" data-id=<%=i.user_game.id %>
+                                                data-username=<%= i.user_game.username %>>Delete</button>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+
+                            </tbody>
+                        </table>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form action="/users/create" method="post">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <input type="hidden" name="id">
+                                            <div class="form-group">
+                                                <label for="username">Username</label><br>
+                                                <input type="text" name="username" placeholder="Enter username">
+                                            </div>
+                                            <div class="form-group" id="password">
+                                                <label for="password">password</label><br>
+                                                <input type="password" name="password" placeholder="Enter password">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">name</label><br>
+                                                <input type="text" name="name" placeholder="Enter name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">address</label><br>
+                                                <input type="text" name="address" placeholder="Enter address">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">email</label><br>
+                                                <input type="email" name="email" placeholder="Enter email">
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="exampleModalDelete" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalDeleteLabel">Delete</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete this user?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <form action="users/delete" method="post">
+                                            <input type="hidden" id="deleteId" name="deleteId">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm text-center">
+                        <br><br><br>
+                        Tambah data
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal">Add New</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </section>
+    <script src="/javascripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)                        
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') || ''
+            if (id === '') {
+                modal.find('.modal-title').text('Add');
+                $('#password').show();
+                modal.find('.modal-body input[name="id"]').val('')
+                modal.find('.modal-body input[name="username"]').val('')
+                modal.find('.modal-body input[name="name"]').val('')
+                modal.find('.modal-body input[name="address"]').val('')
+                modal.find('.modal-body input[name="email"]').val('')
+            } else {                
+                $('#password').hide();
+                var username = button.data('username') || ''
+                var name = button.data('name') || ''
+                var address = button.data('address')
+                var email = button.data('email')
+                modal.find('.modal-title').text('Edit ' + id + ' - ' + name)
+                modal.find('.modal-body input[name="id"]').val(id)
+                modal.find('.modal-body input[name="username"]').val(username)
+                modal.find('.modal-body input[name="name"]').val(name)
+                modal.find('.modal-body input[name="address"]').val(address)
+                modal.find('.modal-body input[name="email"]').val(email)
+            }
+        })
+
+        $('#exampleModalDelete').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id')
+            var modal = $(this)
+            $('#deleteId').val(id)
+        })
+    </script>
+</body>
+
+</html>
