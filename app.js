@@ -71,42 +71,21 @@ app.post('/users/create', (req, res) => {
   }
 })
 
-// // GET /articles/create, menampilkan form create
-// app.get('/articles/create', (req, res) => {
-// res.render('articles/create')
-// })
-
 
 app.get('/dashboard', (req, res) => {
-  //  if(isLogin){ 
-  user_game_biodata.findAll({
-    include: [{ model: user_games }, {
-      model: user_game_history
-    }]
-  }).
-    then(biodata => {
-      // res.json(biodata)
-      res.render('dashboard', { biodata })
-    })
-  // user_game_biodata.findAll(
-  //   {
-  //   include: [
-  //     {
-  //       model: user_game_biodata,
-  //       required: true
-  //     }
-  //   ]
-  // }
-  // )
-  // .then(user_games => {
+  if (isLogin) {
+    user_game_biodata.findAll({
+      include: [{ model: user_games, required: true }, {
+        model: user_game_history
+      }]
+    }).
+      then(biodata => {
+        res.render('dashboard', { biodata })
+      })
 
-  //   //  res.json(usergame)
-  //   res.render('dashboard', { user_games })
-  // })
-
-  // //  }else{
-  //    res.redirect('/admin/login')
-  //  }
+  } else {
+    res.redirect('/admin/login')
+  }
 })
 
 app.get('/admin/login', (req, res) => {
@@ -129,7 +108,7 @@ app.post('/admin/login', (req, res) => {
   }
 
   if (isLogin) {
-    res.render('dashboard')
+    res.redirect('/dashboard')
   } else {
     res.redirect('/loginfailed')
   }
