@@ -24,6 +24,7 @@ h1{
   position: relative;
   background-color: black;
   font-weight: 500;
+  min-height: 100%;
 }
 .bottom-arrow{
   font-size: 20px;
@@ -543,4 +544,13 @@ hr{
 
 .user-tool:active{
   border: none!important;
+}
+
+.div-wrapper {
+  margin-top: 20%;
+  border-radius: 8px;
+  background-color: aliceblue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 0.8;
 }
