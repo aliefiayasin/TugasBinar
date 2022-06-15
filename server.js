@@ -17,7 +17,7 @@ app.use(session({
 
 // Ketiga, setting passport
 // (sebelum router dan view engine)
-const passport = require('./lib/passport')
+const passport = require('./lib/passport-jwt')
 app.use(passport.initialize())
 app.use(passport.session())
 
